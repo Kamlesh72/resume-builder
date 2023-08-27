@@ -151,7 +151,7 @@ const MyForm = () => {
   };
 
   return (
-    <div className="p-20 bg-blue-400">
+    <div className="p-20 bg-blue-400 col-span-2">
       <div className="flex flex-col gap-5">{displaySection()}</div>
       <button
         type="button"

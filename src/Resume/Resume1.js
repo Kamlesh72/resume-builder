@@ -11,7 +11,7 @@ const Resume1 = () => {
   const { username, email, number, socialLinks } = data;
   return (
     <div
-      className="m-10 pt-10 bg-slate-100 text-sm rounded-3xl font-serif tracking-wide"
+      className="m-10 pt-10 bg-slate-100 text-sm rounded-3xl font-serif tracking-wide col-span-3"
       style={{ aspectRatio: "0.75" }}
     >
       <div className="resume text-center py-3">

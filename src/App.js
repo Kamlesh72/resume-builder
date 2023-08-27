@@ -8,7 +8,7 @@ function App() {
   const [form, setForm] = useState(data);
   return (
     <FormContext.Provider value={{ form, setForm }}>
-      <div className="bg-slate-600 grid grid-cols-2">
+      <div className="bg-slate-600 grid grid-cols-5">
         <MyForm />
         <Resume1 />
       </div>
