@@ -1,0 +1,106 @@
+{
+  "username": "YOUR NAME HERE",
+  "socialLinks": [
+    {
+      "platform": "Linkedin",
+      "link": "https://google.com"
+    },
+    {
+      "platform": "Github",
+      "link": "https://google.com"
+    },
+    {
+      "platform": "Leetcode",
+      "link": "https://google.com"
+    },
+    {
+      "platform": "Codeforces",
+      "link": "https://google.com"
+    }
+  ],
+  "email": "yourgmailaddress@gmail.com",
+  "number": "+911234567890",
+  "education": {
+    "college": {
+      "name": "Your Engineering College Here",
+      "branch": "Engineering Branch",
+      "from": "June 2021",
+      "to": "July 2025",
+      "cgpa": "10.0"
+    },
+    "school": {
+      "name": "Your HSC School Name Here",
+      "from": "June 2019",
+      "to": "May 2021",
+      "hscPercent": "90"
+    }
+  },
+  "experiences": [
+    {
+      "name": "Facebook",
+      "from": "June 2021",
+      "to": "July 2025",
+      "points": [
+        "Solved critical bugs in frontend and backend for better user experience",
+        "Solved critical bugs in frontend and backend for better user experience",
+        "Solved critical bugs in frontend and backend for better user experience",
+        "Solved critical bugs in frontend and backend for better user experience"
+      ]
+    },
+    {
+      "name": "Facebook",
+      "from": "June 2021",
+      "to": "July 2025",
+      "points": [
+        "Solved critical bugs in frontend and backend for better user experience",
+        "Solved critical bugs in frontend and backend for better user experience",
+        "Solved critical bugs in frontend and backend for better user experience",
+        "Solved critical bugs in frontend and backend for better user experience"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Track Tube",
+      "points": [
+        "Track Tube helps student watch and track youtube playlist videos without distraction.",
+        "Utilized ReactJs for frontend, NodeJs for backend and Mongodb for backend of the app.",
+        "Users can save Youtube Playlists and also save Progress (watched videos) of the playlist.",
+        "For demo: Id: admin@gmail.com and Pass: admin"
+      ]
+    },
+    {
+      "name": "Media Player",
+      "points": [
+        "Developed a Media Player using JavaFX ( A framework for building cross-platform desktop apps )",
+        "Leveraged Java programming language, CSS styling, and JavaFX's libraries to create interactive user interface.",
+        "Users can save Youtube Playlists and also save Progress (watched videos) of the playlist.",
+        "Implemented multimedia format support, playback controls, and auto subtitle display."
+      ]
+    }
+  ],
+  "achievements": [
+    "Secured First position among 150 participants in CodeStorm event organized under GTU TECHFEST 2022.",
+    "3 Star Rating on Codechef (Highest Rating 1708)",
+    "Specialist on Codeforces (Highest Rating 1425)",
+    "Top 7.8% on Leetcode (Highest Rating 1803)",
+    "Global Rank: 332 in Codechef Starters 72 Div3",
+    "Under 1k rank among 25k+ participants in Codeforces Round 856 Div2",
+    "Rank 856 among 24k+ participants in Leetcode Weekly Contest 355",
+    "Solved more than 850+ problems over all platforms"
+  ],
+  "skills": [
+    {
+      "name": "Programming",
+      "points": ["C", "C++", "Java"]
+    },
+    {
+      "name": "Programming",
+      "points": ["C", "C++", "Java"]
+    },
+    {
+      "name": "Programming",
+      "points": ["C", "C++", "Java"]
+    }
+  ]
+}
