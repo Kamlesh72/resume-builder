@@ -1,0 +1,65 @@
+{
+  "header": {
+    "firstName": "",
+    "lastName": "",
+    "email": "",
+    "countryCode": "+91",
+    "phone": ""
+  },
+  "socialLinks": [
+    {
+      "platform": "Linkedin Link",
+      "link": ""
+    },
+    {
+      "platform": "Github Link",
+      "link": ""
+    },
+    {
+      "platform": "Leetcode Link",
+      "link": ""
+    },
+    {
+      "platform": "Codeforces Link",
+      "link": ""
+    }
+  ],
+  "education": [
+    {
+      "name": "",
+      "degree": "",
+      "branch": "",
+      "result": "",
+      "startDate": "",
+      "endDate": ""
+    }
+  ],
+  "experiences": [
+    {
+      "name": "",
+      "designation": "",
+      "startDate": "",
+      "endDate": "",
+      "points": [""]
+    }
+  ],
+  "projects": [
+    {
+      "name": "",
+      "demoLink": "",
+      "codeLink": "",
+      "points": [""]
+    }
+  ],
+  "achievements": [
+    {
+      "points": [""]
+    }
+  ],
+  "skills": [
+    {
+      "name": "",
+      "points": [""]
+    }
+  ]
+}

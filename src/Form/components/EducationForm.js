@@ -1,94 +1,81 @@
-const EducationForm = ({ handleEducation, form }) => {
+import ACTIONS from "../../Constants/ACTIONS";
+import SECTIONS from "../../Constants/SECTIONS";
+
+const EducationForm = ({ handleSection, handleEducation, form }) => {
   const { education } = form;
   return (
     <div>
-      <div className="text-3xl font-semibold mb-5 underline">EDUCATION</div>
+      <h1 className="font-bold uppercase text-5xl mb-5 flex">
+        <span>EDUCATION</span>
+        <button
+          className="bg-gray-300 h-fit sm:h-auto text-base ml-10 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
+          onClick={(e) => handleSection(e, ACTIONS.ADD, SECTIONS.EDUCATION)}
+        >
+          ADD
+        </button>
+      </h1>
 
-      {/* COLLEGE */}
-      <div className=" font-semibold mb-3">COLLEGE</div>
-      <div class="w-full bg-slate-500 p-5 my-5">
-        <div class="relative z-0 w-full mb-6 group">
+      {education.map((edu, eduIndex) => (
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 my-10 border-2 border-gray-300 p-5 rounded-lg">
+          <button
+            type="button"
+            className="focus:outline-none ml-auto col-span-2 w-fit p-3 text-white bg-red-600 hover:bg-red-700 font-medium rounded-lg text-sm"
+            onClick={(e) =>
+              handleSection(e, ACTIONS.DELETE, SECTIONS.EDUCATION, eduIndex)
+            }
+          >
+            DELETE
+          </button>
           <input
-            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
             type="text"
             name="name"
-            value={education.college.name}
-            onChange={(e) => handleEducation(e, "college")}
+            value={edu.name}
+            placeholder="College*"
+            onChange={(e) => handleEducation(e, eduIndex)}
           />
-        </div>
-        <div class="grid md:grid-cols-2 md:gap-6">
-          <div class="relative z-0 w-full mb-6 group">
-            <input
-              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-              type="text"
-              name="from"
-              value={education.college.from}
-              onChange={(e) => handleEducation(e, "college")}
-            />
-          </div>
-          <div class="relative z-0 w-full mb-6 group">
-            <input
-              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-              type="text"
-              name="to"
-              value={education.college.to}
-              onChange={(e) => handleEducation(e, "college")}
-            />
-          </div>
-        </div>
-        <div class="relative z-0 w-full mb-6 group">
           <input
-            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
             type="text"
-            name="cgpa"
-            value={education.college.cgpa}
-            onChange={(e) => handleEducation(e, "college")}
+            name="degree"
+            value={edu.degree}
+            placeholder="Degree"
+            onChange={(e) => handleEducation(e, eduIndex)}
           />
-        </div>
-      </div>
-
-      {/* SCHOOL */}
-      <div className=" font-semibold mb-3">SCHOOL</div>
-      <div class="w-full bg-slate-500 p-5 my-5">
-        <div class="relative z-0 w-full mb-6 group">
           <input
-            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
             type="text"
-            name="name"
-            value={education.school.name}
-            onChange={(e) => handleEducation(e, "school")}
+            name="branch"
+            value={edu.branch}
+            placeholder="Branch"
+            onChange={(e) => handleEducation(e, eduIndex)}
           />
-        </div>
-        <div class="grid md:grid-cols-2 md:gap-6">
-          <div class="relative z-0 w-full mb-6 group">
-            <input
-              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-              type="text"
-              name="from"
-              value={education.school.from}
-              onChange={(e) => handleEducation(e, "school")}
-            />
-          </div>
-          <div class="relative z-0 w-full mb-6 group">
-            <input
-              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-              type="text"
-              name="to"
-              value={education.school.to}
-              onChange={(e) => handleEducation(e, "school")}
-            />
-          </div>
-        </div>
-        <div class="relative z-0 w-full mb-6 group">
           <input
-            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
             type="text"
-            name="hscPercent"
-            value={education.school.hscPercent}
-            onChange={(e) => handleEducation(e, "school")}
+            name="result"
+            value={edu.result}
+            placeholder="Result"
+            onChange={(e) => handleEducation(e, eduIndex)}
+          />
+          <input
+            className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+            type="text"
+            name="startDate"
+            value={edu.startDate}
+            placeholder="Start Date*"
+            onChange={(e) => handleEducation(e, eduIndex)}
+          />
+          <input
+            className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+            type="text"
+            name="endDate"
+            value={edu.endDate}
+            placeholder="End Date*"
+            onChange={(e) => handleEducation(e, eduIndex)}
           />
         </div>
-      </div>
+      ))}
     </div>
   );
 };

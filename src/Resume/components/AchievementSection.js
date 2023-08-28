@@ -8,8 +8,8 @@ const AchievementSection = ({ achievements }) => {
       </div>
       <div className="px-12 mt-3">
         <ul className="pl-10 list-disc">
-          {achievements.map((achievement) => (
-            <li>{achievement}</li>
+          {achievements[0].points.map((point) => (
+            <li>{point}</li>
           ))}
         </ul>
       </div>

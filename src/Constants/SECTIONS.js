@@ -3,7 +3,7 @@ const SECTIONS = {
   SOCIAL_LINKS: "socialLinks",
   EMAIL: "email",
   NUMBER: "number",
-  EDUCATION: "EDUCATION",
+  EDUCATION: "education",
   EXPERIENCES: "experiences",
   PROJECTS: "projects",
   ACHIEVEMENTS: "achievements",

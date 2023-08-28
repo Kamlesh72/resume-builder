@@ -9,9 +9,9 @@ const ExperienceSection = ({ experiences }) => {
       {experiences.map((experience) => (
         <div className="px-12 mt-3">
           <div className="flex justify-between">
-            <span className="font-medium text-base">{experience.name}</span>
+            <span className="font-medium text-base">{experience.name + " | " + experience.designation}</span>
             <span className="text-gray-700">
-              {experience.from} - {experience.to}{" "}
+              {experience.startDate} - {experience.endDate}{" "}
             </span>
           </div>
           <ul className="pl-10 list-disc">

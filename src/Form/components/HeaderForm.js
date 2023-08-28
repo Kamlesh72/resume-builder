@@ -1,56 +1,53 @@
-const HeaderForm = ({
-  handleInfo,
-  handleSocialLinks,
-  deleteSocialLink,
-  form,
-}) => {
+import ACTIONS from "../../Constants/ACTIONS";
+
+const HeaderForm = ({ handleHeader, handleSocialLinks, form }) => {
+  const { header } = form;
   return (
     <div>
-      <div className="text-3xl font-semibold mb-5 underline">HEADER</div>
-      <div class="w-full bg-slate-500 p-5 my-5">
-        <div class="relative z-0 w-full mb-6 group">
-          <input
-            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            type="text"
-            name="username"
-            value={form.username}
-            onChange={handleInfo}
-          />
-        </div>
+      <h1 className="font-bold uppercase text-5xl mb-10">HEADER</h1>
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5">
+        <input
+          className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          type="text"
+          name="firstName"
+          value={header.firstName}
+          onChange={handleHeader}
+          placeholder="First Name*"
+        />
+        <input
+          className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          type="text"
+          name="lastName"
+          value={header.lastName}
+          onChange={handleHeader}
+          placeholder="Last Name*"
+        />
+        <input
+          className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          type="email"
+          name="email"
+          value={header.email}
+          onChange={handleHeader}
+          placeholder="Email*"
+        />
+        <input
+          className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          type="number"
+          name="phone"
+          value={header.phone}
+          onChange={handleHeader}
+          placeholder="Phone*"
+        />
 
         {form.socialLinks.map((social, linkIndex) => (
-          <div class="relative z-0 w-full mb-6 group">
-            <div>{social.platform} :</div>
-            <input
-              class="inline-block py-2.5 px-0 w-11/12 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-              type="text"
-              name={social.platform}
-              value={social.link}
-              onChange={handleSocialLinks}
-            />
-            <button onClick={() => deleteSocialLink(linkIndex)}>X</button>
-          </div>
-        ))}
-        <div class="relative z-0 w-full mb-6 group">
-          Email:{" "}
           <input
-            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            type="email"
-            name="email"
-            value={form.email}
-            onChange={handleInfo}
-          />
-        </div>
-        <div class="relative z-0 w-full mb-6 group">
-          Mobile:{" "}
-          <input
-            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
             type="text"
-            name="number"
-            value={form.number}
-            onChange={handleInfo}
+            value={social.link}
+            placeholder={social.platform}
+            onChange={(e) => handleSocialLinks(e, ACTIONS.UPDATE, linkIndex)}
           />
-        </div>
+        ))}
       </div>
     </div>
   );
