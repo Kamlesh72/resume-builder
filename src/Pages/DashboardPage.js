@@ -25,8 +25,8 @@ const DashboardPage = () => {
   useEffect(() => {
     const init = async () => {
       params.append("grant_type", "authorization_code");
-      params.append("client_id", "77u3nsqg1v8xq2");
-      params.append("client_secret", "ouOx86PgRiAfqDkm");
+      params.append(process.env.REACT_APP_CTID, process.env.REACT_APP_CTID2);
+      params.append(process.env.REACT_APP_CTSC, process.env.REACT_APP_CTSC2);
       params.append(
         "redirect_uri",
         "https://kamlesh72.github.io/resume-builder/dashboard"
