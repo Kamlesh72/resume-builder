@@ -3,10 +3,13 @@ import DashboardPage from "./Pages/DashboardPage";
 import HomePage from "./Pages/HomePage";
 
 function App() {
-  const router = createBrowserRouter([
-    { path: "/", element: <HomePage></HomePage> },
-    { path: "/dashboard", element: <DashboardPage></DashboardPage> },
-  ]);
+  const router = createBrowserRouter(
+    [
+      { path: "/", element: <HomePage></HomePage> },
+      { path: "/dashboard", element: <DashboardPage></DashboardPage> },
+    ],
+    { basename: "/resume-builder" }
+  );
 
   return (
     <div className="App">
