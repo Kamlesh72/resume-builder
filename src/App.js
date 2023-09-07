@@ -7,7 +7,6 @@ function App() {
   const router = createBrowserRouter([
     { path: "/", element: <HomePage></HomePage> },
     { path: "/dashboard", element: <DashboardPage></DashboardPage> },
-    { basename: "/resume-builder" },
   ]);
 
   return (
