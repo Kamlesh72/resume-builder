@@ -165,15 +165,6 @@ const MyForm = ({ whichSection, setSection }) => {
   return (
     <div className="max-w-full mx-12">
       {displaySection()}
-      <div className="mt-10 w-1/2 lg:w-1/4 ml-auto">
-        <button
-          className="uppercase text-sm font-bold tracking-wide bg-blue-900 text-gray-100 p-3 rounded-lg w-full 
-                focus:outline-none focus:shadow-outline"
-          onClick={() => setSection((prevSection) => (prevSection + 1) % 6)}
-        >
-          NEXT
-        </button>
-      </div>
     </div>
   );
 };

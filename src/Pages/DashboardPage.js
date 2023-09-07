@@ -107,7 +107,7 @@ const DashboardPage = () => {
             <MyForm whichSection={whichSection} setSection={setSection} />
           </div>
 
-          <div className="lg:ml-20">
+          <div className="2xl:ml-20">
             <div ref={ref} className="w-full p-10" style={styles}>
               <Resume1
                 formElements={formElements}
