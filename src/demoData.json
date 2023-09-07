@@ -92,23 +92,21 @@
       ]
     }
   ],
-  "achievements": [{
-    "points": [
-      "Secured First position among 150 participants in CodeStorm event organized under GTU TECHFEST 2022.",
-      "3 Star Rating on Codechef (Highest Rating 1708)",
-      "Specialist on Codeforces (Highest Rating 1425)",
-      "Top 7.8% on Leetcode (Highest Rating 1803)",
-      "Global Rank: 332 in Codechef Starters 72 Div3",
-      "Under 1k rank among 25k+ participants in Codeforces Round 856 Div2",
-      "Rank 856 among 24k+ participants in Leetcode Weekly Contest 355",
-      "Solved more than 850+ problems over all platforms"
-    ]
-  }],
-  "skills": [
+  "achievements": [
     {
-      "name": "Programming",
-      "points": ["C", "C++", "Java"]
-    },
+      "points": [
+        "Secured First position among 150 participants in CodeStorm event organized under GTU TECHFEST 2022.",
+        "3 Star Rating on Codechef (Highest Rating 1708)",
+        "Specialist on Codeforces (Highest Rating 1425)",
+        "Top 7.8% on Leetcode (Highest Rating 1803)",
+        "Global Rank: 332 in Codechef Starters 72 Div3",
+        "Under 1k rank among 25k+ participants in Codeforces Round 856 Div2",
+        "Rank 856 among 24k+ participants in Leetcode Weekly Contest 355",
+        "Solved more than 850+ problems over all platforms"
+      ]
+    }
+  ],
+  "skills": [
     {
       "name": "Programming",
       "points": ["C", "C++", "Java"]

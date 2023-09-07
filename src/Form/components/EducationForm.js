@@ -5,7 +5,7 @@ const EducationForm = ({ handleSection, handleEducation, form }) => {
   const { education } = form;
   return (
     <div>
-      <h1 className="font-bold uppercase text-5xl mb-5 flex">
+      <h1 className="font-bold uppercase text-2xl flex">
         <span>EDUCATION</span>
         <button
           className="bg-gray-300 h-fit sm:h-auto text-base ml-10 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"

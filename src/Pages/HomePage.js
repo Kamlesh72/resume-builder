@@ -4,20 +4,27 @@ import Resume1Image from "../Assets/resume_1.png";
 
 const HomePage = () => {
   const navigate = useNavigate();
+  // eslint-disable-next-line
   const [whichResume, setResume] = useState(0);
 
   return (
-    <div className="bg-slate-200 p-5 lg:p-20 h-screen flex justify-between flex-col">
+    <div
+      className="bg-white p-5 lg:p-20 h-screen grid"
+      style={{ gridTemplateRows: "100px auto 50px" }}
+    >
+      <div className="h-fit text-center font-bold uppercase text-4xl">
+        Choose from our Top Resumes
+      </div>
       <div className="flex">
         <div
           className={`cursor-pointer ${
             whichResume === 0 &&
-            " border-blue-500 border-2 p-0.5 rounded-lg shadow shadow-blue-800"
+            " border-blue-500 h-fit border-2 p-0.5 rounded-lg shadow shadow-blue-800"
           }`}
         >
           <img
             src={Resume1Image}
-            className={`w-20 sm:w-32 lg:w-40 p-1 bg-slate-600 rounded-lg`}
+            className={`w-32 lg:w-40 p-1 bg-slate-600 rounded-lg`}
             alt="resume-1"
           />
         </div>

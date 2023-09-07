@@ -5,7 +5,7 @@ const AchievementForm = ({ handleSectionPoints, form }) => {
   const { points } = form.achievements[0];
   return (
     <div>
-      <h1 className="font-bold uppercase text-5xl mb-10">ACHIEVEMENTS</h1>
+      <h1 className="font-bold uppercase text-2xl">ACHIEVEMENTS</h1>
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 my-10 border-2 border-gray-300 p-5 rounded-lg">
       <h1 className="font-bold uppercase text-xl mt-5 flex">

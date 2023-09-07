@@ -9,6 +9,8 @@ import SkillsForm from "./components/SkillsForm";
 // import DemoForm from "./components/DemoForm";
 import ACTIONS from "../Constants/ACTIONS";
 import formTemplate from "../formTemplate.json";
+import { toast } from "react-hot-toast";
+import SECTIONS from "../Constants/SECTIONS";
 
 const MyForm = ({ whichSection, setSection }) => {
   const { form, setForm } = useContext(FormContext);
@@ -21,7 +23,7 @@ const MyForm = ({ whichSection, setSection }) => {
       };
     });
   };
-  const handleSocialLinks = (e, OPTION, linkIndex) => {
+  const handleSocialLinks = (e, linkIndex) => {
     setForm((prevForm) => {
       const link = e.target.value;
       const updatedSocialLinks = [...prevForm.socialLinks];
@@ -30,6 +32,10 @@ const MyForm = ({ whichSection, setSection }) => {
     });
   };
   const handleSection = (e, OPTION, section, sectionIndex) => {
+    if (OPTION === ACTIONS.ADD && form[section].length === 2) {
+      toast.error("Cannot Add more than 2 Sections");
+      return;
+    }
     setForm((prevForm) => {
       const updatedSection = [...prevForm[section]];
       if (OPTION === ACTIONS.ADD) updatedSection.push(formTemplate[section][0]);
@@ -42,10 +48,25 @@ const MyForm = ({ whichSection, setSection }) => {
     const pointIndex = e.target?.id;
     setForm((prevForm) => {
       const updatedPoints = [...prevForm[section][sectionIndex].points];
-      if (OPTION === ACTIONS.ADD) updatedPoints.push("");
-      else if (OPTION === ACTIONS.DELETE) updatedPoints.splice(pointIndex, 1);
+      if (OPTION === ACTIONS.ADD) {
+        if (section === SECTIONS.ACHIEVEMENTS) {
+          if (updatedPoints.length === 8) {
+            toast.error("Cannot Add more than 8 Points");
+            return { ...prevForm };
+          }
+        } else if (updatedPoints.length === 4) {
+          toast.error("Cannot Add more than 4 Points");
+          return { ...prevForm };
+        }
+        updatedPoints.push("");
+      } else if (OPTION === ACTIONS.DELETE) updatedPoints.splice(pointIndex, 1);
       else if (OPTION === ACTIONS.UPDATE) {
-        updatedPoints[pointIndex] = e.target.value;
+        const value = e.target.value;
+        if (value.length >= 150) {
+          toast.error("Word limit exceeded");
+          return { ...prevForm };
+        }
+        updatedPoints[pointIndex] = value;
       }
       const updatedSection = [...prevForm[section]];
       updatedSection[sectionIndex].points = updatedPoints;
@@ -87,62 +108,62 @@ const MyForm = ({ whichSection, setSection }) => {
   };
 
   const displaySection = () => {
-    if (whichSection === 0) {
-      return (
-        <HeaderForm
-          handleHeader={handleHeader}
-          handleSocialLinks={handleSocialLinks}
-          form={form}
-        />
-      );
-    } else if (whichSection === 1) {
-      return (
-        <EducationForm
-          handleSection={handleSection}
-          handleEducation={handleEducation}
-          form={form}
-        />
-      );
-    } else if (whichSection === 2) {
-      return (
-        <ExperienceForm
-          handleSection={handleSection}
-          handleSectionData={handleSectionData}
-          handleSectionPoints={handleSectionPoints}
-          form={form}
-        />
-      );
-    } else if (whichSection === 3) {
-      return (
-        <ProjectForm
-          handleSection={handleSection}
-          handleSectionData={handleSectionData}
-          handleSectionPoints={handleSectionPoints}
-          form={form}
-        />
-      );
-    } else if (whichSection === 4) {
-      return (
-        <AchievementForm
-          handleSectionPoints={handleSectionPoints}
-          handleAchievements={handleAchievements}
-          form={form}
-        />
-      );
-    } else {
-      return (
-        <SkillsForm
-          handleSection={handleSection}
-          handleSectionData={handleSectionData}
-          handleSectionPoints={handleSectionPoints}
-          form={form}
-        />
-      );
-    }
+    return (
+      <div className="">
+        <div className="p-8 lg:px-12 my-10 rounded-2xl shadow-2xl bg-white h-fit">
+          <HeaderForm
+            handleHeader={handleHeader}
+            handleSocialLinks={handleSocialLinks}
+            form={form}
+          />
+        </div>
+        <div className="p-8 lg:px-12 my-10 rounded-2xl shadow-2xl bg-white h-fit">
+          <EducationForm
+            handleSection={handleSection}
+            handleEducation={handleEducation}
+            form={form}
+          />
+        </div>
+
+        <div className="p-8 lg:px-12 my-10 rounded-2xl shadow-2xl bg-white h-fit">
+          <ExperienceForm
+            handleSection={handleSection}
+            handleSectionData={handleSectionData}
+            handleSectionPoints={handleSectionPoints}
+            form={form}
+          />
+        </div>
+
+        <div className="p-8 lg:px-12 my-10 rounded-2xl shadow-2xl bg-white h-fit">
+          <ProjectForm
+            handleSection={handleSection}
+            handleSectionData={handleSectionData}
+            handleSectionPoints={handleSectionPoints}
+            form={form}
+          />
+        </div>
+
+        <div className="p-8 lg:px-12 my-10 rounded-2xl shadow-2xl bg-white h-fit">
+          <AchievementForm
+            handleSectionPoints={handleSectionPoints}
+            handleAchievements={handleAchievements}
+            form={form}
+          />
+        </div>
+        <div className="p-8 lg:px-12 my-10 rounded-2xl shadow-2xl bg-white h-fit">
+          <SkillsForm
+            handleSection={handleSection}
+            handleSectionData={handleSectionData}
+            handleSectionPoints={handleSectionPoints}
+            form={form}
+          />
+        </div>
+      </div>
+    );
   };
 
   return (
-    <div className="w-full mx-auto p-8 md:px-12 lg:px-20 my-4 lg:w-9/12 mr-auto rounded-2xl shadow-2xl bg-white">
+    <div className="max-w-full mx-12">
       {displaySection()}
       <div className="mt-10 w-1/2 lg:w-1/4 ml-auto">
         <button

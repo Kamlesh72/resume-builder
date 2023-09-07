@@ -1,10 +1,8 @@
-import ACTIONS from "../../Constants/ACTIONS";
-
 const HeaderForm = ({ handleHeader, handleSocialLinks, form }) => {
   const { header } = form;
   return (
     <div>
-      <h1 className="font-bold uppercase text-5xl mb-10">HEADER</h1>
+      <h1 className="font-bold uppercase text-2xl">HEADER</h1>
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5">
         <input
           className="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
@@ -45,7 +43,7 @@ const HeaderForm = ({ handleHeader, handleSocialLinks, form }) => {
             type="text"
             value={social.link}
             placeholder={social.platform}
-            onChange={(e) => handleSocialLinks(e, ACTIONS.UPDATE, linkIndex)}
+            onChange={(e) => handleSocialLinks(e, linkIndex)}
           />
         ))}
       </div>
